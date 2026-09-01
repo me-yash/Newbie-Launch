@@ -1,75 +1,34 @@
 const Navbar = () => {
   return (
-    <header className="relative z-50 w-full px-6 py-6 md:px-10">
-
+    <header className="absolute left-0 top-0 z-50 w-full px-6 py-6 md:px-10">
       <nav className="flex items-center justify-between">
 
-        {/* ================================
-            LOGO
-        ================================= */}
-
-        <a
-          href="/"
-          className="text-lg font-bold tracking-[-0.04em] md:text-xl"
-        >
-          NEWBIE
-          <span className="font-normal"> LAUNCH</span>
-        </a>
-
-
-        {/* ================================
-            DESKTOP NAVIGATION
-        ================================= */}
-
-        <div className="hidden items-center gap-10 text-sm md:flex">
-
-          <a
-            href="#work"
-            className="transition-opacity duration-300 hover:opacity-50"
-          >
-            Work
-          </a>
-
-          <a
-            href="#about"
-            className="transition-opacity duration-300 hover:opacity-50"
-          >
-            About
-          </a>
-
-          <a
-            href="#contact"
-            className="transition-opacity duration-300 hover:opacity-50"
-          >
-            Contact
-          </a>
-
-        </div>
-
-
-        {/* ================================
-            MENU BUTTON
-        ================================= */}
-
-        <button
-          className="
-            rounded-full
-            border
-            border-white/60
-            px-5
-            py-2
-            text-sm
-            transition-all
-            duration-300
-            hover:bg-white
-            hover:text-black
-          "
-        >
+        <button className="text-sm font-medium text-black transition-opacity hover:opacity-50">
           Menu
         </button>
 
-      </nav>
+        <a
+          href="/"
+          className="absolute left-1/2 -translate-x-1/2 text-lg font-bold tracking-[-0.04em] md:text-xl"
+        >
+          <p className="text-black">NEWBIE LAUNCH</p>
+        </a>
 
+        <div className="ml-auto hidden items-center text-black gap-8 text-sm md:flex">
+          <a href="#work" className="transition-opacity hover:opacity-50">
+            Work
+          </a>
+
+          <a href="#about" className="transition-opacity hover:opacity-50">
+            About
+          </a>
+
+          <a href="#contact" className="transition-opacity hover:opacity-50">
+            Contact
+          </a>
+        </div>
+
+      </nav>
     </header>
   );
 };
