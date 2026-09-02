@@ -1,43 +1,52 @@
-// Navbar.jsx
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
+
+  const closeMenu = () => setOpen(false);
+
   return (
-    <header className="navbar fixed left-0 top-0 z-50 w-full px-6 py-6 md:px-10">
-      <nav className="relative flex items-center justify-between">
-        <button className="navbar-item text-sm font-medium transition-colors duration-300">
-          Menu
+    <header className="navbar">
+      <nav className="navbar-inner">
+        <button
+          type="button"
+          onClick={() => setOpen((value) => !value)}
+          className="navbar-item mobile-menu-button"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+        >
+          <span className={`menu-line ${open ? "is-open" : ""}`} />
+          <span className={`menu-line ${open ? "is-open middle" : ""}`} />
+          <span className={`menu-line ${open ? "is-open bottom" : ""}`} />
         </button>
 
-        <a
-          href="/"
-          className="navbar-item absolute left-1/2 -translate-x-1/2 text-lg font-bold tracking-[-0.04em] transition-colors duration-300 md:text-xl"
+        <Link
+          to="/"
+          onClick={closeMenu}
+          className="navbar-item navbar-logo"
         >
           NEWBIE LAUNCH
-        </a>
+        </Link>
 
-        <div className="ml-auto hidden items-center gap-8 text-sm md:flex">
-          <a
-            href="#work"
-            className="navbar-item transition-colors duration-300"
-          >
-            Work
-          </a>
-
-          <a
-            href="#about"
-            className="navbar-item transition-colors duration-300"
-          >
-            About
-          </a>
-
-          <a
-            href="#contact"
-            className="navbar-item transition-colors duration-300"
-          >
-            Contact
-          </a>
+        <div className="navbar-links">
+          <a href="/#work" className="navbar-item">Work</a>
+          <a href="/#about" className="navbar-item">About</a>
+          <a href="/#contact" className="navbar-item">Contact</a>
         </div>
+
+        <button type="button" className="navbar-item navbar-menu-label">
+          Menu
+        </button>
       </nav>
+
+      <div className={`mobile-menu ${open ? "is-open" : ""}`}>
+        <div className="mobile-menu-links">
+          <a href="/#work" onClick={closeMenu}>Work</a>
+          <a href="/#about" onClick={closeMenu}>About</a>
+          <a href="/#contact" onClick={closeMenu}>Contact</a>
+        </div>
+      </div>
     </header>
   );
 };

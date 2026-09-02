@@ -35,12 +35,12 @@ const services = [
 const HeroVisual = () => {
   return (
     <div className="hero-visual absolute inset-0">
-      <div className="hero-title-wrap absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2">
-        <h1 className="hero-title flex items-center">
-          <span className="text-purple-950">NEWBIE</span>
-          <span className="text-purple-950">LAUNCH</span>
-        </h1>
-      </div>
+      <div className="hero-title-wrap">
+  <h1 className="hero-title">
+    <span className="text-purple-950">NEWBIE</span>
+    <span className="text-purple-950">LAUNCH</span>
+  </h1>
+</div>
 
       <div className="services-scene absolute inset-0 z-10 bg-black opacity-0">
         <div className="services-heading mt-10">
