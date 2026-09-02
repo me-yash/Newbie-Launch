@@ -38,3 +38,257 @@ a {
   background: #ffffff;
   color: #000000;
 }
+
+.hero-visual {
+  overflow: hidden;
+}
+
+.hero-title-wrap {
+  width: 100%;
+  transform-origin: center center;
+  will-change: transform, opacity;
+}
+
+.hero-title {
+  width: max-content;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+
+  color: #000;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(80px, 14vw, 220px);
+  font-weight: 900;
+  line-height: 0.78;
+  letter-spacing: -0.09em;
+  text-transform: uppercase;
+}
+
+.hero-title span {
+  display: block;
+}
+
+/* Services */
+
+.services-scene {
+  overflow: hidden;
+  will-change: opacity;
+}
+
+.services-heading {
+  position: absolute;
+  top: 28px;
+  left: 40px;
+  z-index: 20;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.services-canvas {
+  position: absolute;
+  inset: 0;
+
+  transform-origin: center center;
+  will-change: transform;
+}
+
+/* individual media */
+
+.service-card {
+  position: absolute;
+  overflow: hidden;
+
+  background: #181818;
+
+  will-change: transform;
+}
+
+.service-visual {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0c0c0c,
+      #505050 45%,
+      #151515
+    );
+}
+
+.service-visual span {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  z-index: 5;
+
+  color: white;
+
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.service-pattern {
+  position: absolute;
+  inset: -30%;
+
+  background:
+    linear-gradient(
+      115deg,
+      transparent 35%,
+      rgba(255,255,255,0.12) 36%,
+      transparent 38%
+    ),
+    radial-gradient(
+      circle at 30% 30%,
+      #aaa 0 5%,
+      transparent 6%
+    ),
+    radial-gradient(
+      circle at 70% 70%,
+      #555 0 15%,
+      transparent 16%
+    );
+
+  background-size:
+    auto,
+    180px 180px,
+    260px 260px;
+
+  animation: serviceMove 7s ease-in-out infinite alternate;
+}
+
+.service-light {
+  position: absolute;
+
+  width: 60%;
+  aspect-ratio: 1;
+
+  left: 20%;
+  top: 15%;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(255,255,255,0.5),
+    rgba(255,255,255,0.08) 40%,
+    transparent 70%
+  );
+
+  filter: blur(20px);
+
+  animation: serviceLightMove 5s ease-in-out infinite alternate;
+}
+
+/* Layout */
+
+.service-card-1 {
+  width: 24vw;
+  height: 34vw;
+
+  left: 12%;
+  top: 14%;
+
+  transform: rotate(-6deg);
+}
+
+.service-card-2 {
+  width: 30vw;
+  height: 20vw;
+
+  left: 37%;
+  top: 17%;
+
+  transform: rotate(3deg);
+}
+
+.service-card-3 {
+  width: 27vw;
+  height: 32vw;
+
+  right: 9%;
+  top: 13%;
+
+  transform: rotate(7deg);
+}
+
+.service-card-4 {
+  width: 30vw;
+  height: 21vw;
+
+  left: 20%;
+  bottom: 8%;
+
+  transform: rotate(5deg);
+}
+
+.service-card-5 {
+  width: 27vw;
+  height: 20vw;
+
+  right: 15%;
+  bottom: 10%;
+
+  transform: rotate(-5deg);
+}
+
+@keyframes serviceMove {
+  from {
+    transform: translate3d(-2%, -2%, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(3%, 4%, 0) scale(1.12);
+  }
+}
+
+@keyframes serviceLightMove {
+  from {
+    transform: translate(-10%, -5%) scale(0.9);
+  }
+
+  to {
+    transform: translate(15%, 10%) scale(1.2);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 19vw;
+  }
+
+  .service-card-1 {
+    width: 38vw;
+    height: 48vw;
+  }
+
+  .service-card-2 {
+    width: 45vw;
+    height: 30vw;
+  }
+
+  .service-card-3 {
+    width: 38vw;
+    height: 45vw;
+  }
+
+  .service-card-4 {
+    width: 45vw;
+    height: 30vw;
+  }
+
+  .service-card-5 {
+    width: 40vw;
+    height: 30vw;
+  }
+}

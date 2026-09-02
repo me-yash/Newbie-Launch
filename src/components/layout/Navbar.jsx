@@ -7,12 +7,12 @@ const Navbar = () => {
           Menu
         </button>
 
-        <a
+        {/* <a
           href="/"
           className="absolute left-1/2 -translate-x-1/2 text-lg font-bold tracking-[-0.04em] md:text-xl"
         >
-          <p className="text-black">NEWBIE LAUNCH</p>
-        </a>
+          <p className="text-black font-bold">NEWBIE LAUNCH</p>
+        </a> */}
 
         <div className="ml-auto hidden items-center text-black gap-8 text-sm md:flex">
           <a href="#work" className="transition-opacity hover:opacity-50">

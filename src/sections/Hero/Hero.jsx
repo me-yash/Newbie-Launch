@@ -8,7 +8,7 @@ const Hero = () => {
 
   return (
     <>
-      <section className="hero-section relative h-[350vh] bg-[#f4f3ef]">
+      <section className="hero-section relative h-[350vh] bg-[#ffcc00]">
         <div className="hero-stage sticky top-0 h-screen overflow-hidden">
           <Navbar />
 
@@ -26,7 +26,7 @@ const Hero = () => {
           Newbie Launch
         </p>
 
-        <h2 className="max-w-6xl text-[11vw] font-black uppercase leading-[0.82] tracking-[-0.07em]">
+        <h2 className="max-w-6xl text-[11vw] text-amber-500 font-black uppercase leading-[0.82] tracking-[-0.07em]">
           Ideas into
           <br />
           experiences.
@@ -37,3 +37,4 @@ const Hero = () => {
 };
 
 export default Hero;
+

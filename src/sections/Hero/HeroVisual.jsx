@@ -1,18 +1,64 @@
+const services = [
+  {
+    name: "WEB DEVELOPMENT",
+    className: "service-card service-card-1",
+  },
+  {
+    name: "UI / UX DESIGN",
+    className: "service-card service-card-2",
+  },
+  {
+    name: "APP DEVELOPMENT",
+    className: "service-card service-card-3",
+  },
+  {
+    name: "AI & AUTOMATION",
+    className: "service-card service-card-4",
+  },
+  {
+    name: "BRANDING",
+    className: "service-card service-card-5",
+  },
+];
+
 const HeroVisual = () => {
   return (
-    <div className="hero-visual absolute inset-0 flex items-center justify-center">
+    <div className="hero-visual absolute inset-0">
 
-      <div className="hero-glow absolute left-1/2 top-1/2 h-[35vw] w-[35vw] -translate-x-1/2 -translate-y-1/2 rounded-full bg-black/[0.04] blur-3xl" />
+      {/* Opening */}
+      <div className="hero-title-wrap absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2">
+        <h1 className="hero-title flex items-center">
+          <span>NEWBIE</span>
+          <span>LAUNCH</span>
+        </h1>
+      </div> 
 
-      <div className="hero-ring absolute left-1/2 top-1/2 h-[32vw] w-[32vw] min-h-[280px] min-w-[280px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-black/10" />
+      {/* Services scene */}
+      <div className="services-scene absolute inset-0 z-10 bg-black opacity-0">
 
-      <div className="hero-ring hero-ring-two absolute left-1/2 top-1/2 h-[44vw] w-[44vw] min-h-[360px] min-w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-black/[0.06]" />
+        <div className="services-heading">
+          <span>01 — WHAT WE DO</span>
+        </div>
 
-      <div className="hero-title-wrap relative z-10 overflow-visible">
-        <h1 className="hero-title text-center text-[15vw] font-black uppercase leading-[0.78] tracking-[-0.08em] text-black">
-  <span className="block">Newbie</span>
-  <span className="block">Launch</span>
-</h1>
+        <div className="services-canvas">
+
+          {services.map((service) => (
+            <div
+              key={service.name}
+              className={service.className}
+            >
+              <div className="service-visual">
+                <div className="service-pattern" />
+
+                <div className="service-light" />
+
+                <span>{service.name}</span>
+              </div>
+            </div>
+          ))}
+
+        </div>
+
       </div>
 
     </div>
