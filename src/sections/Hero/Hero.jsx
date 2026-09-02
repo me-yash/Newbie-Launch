@@ -1,17 +1,48 @@
+// Hero.jsx
+
 import Navbar from "../../components/layout/Navbar";
 import HeroText from "./HeroText";
 import HeroVisual from "./HeroVisual";
 import { useHeroAnimation } from "../../animations/gsap/hero.animation";
+import HoneycombMaze from "../../components/common/HoneycombMaze";
+
+const projects = [
+  {
+    title: "NEW AGE WEB",
+    year: "2026",
+    type: "WEB DEVELOPMENT",
+  },
+  {
+    title: "DIGITAL SYSTEM",
+    year: "2026",
+    type: "UI / UX DESIGN",
+  },
+  {
+    title: "MOBILE FIRST",
+    year: "2026",
+    type: "APP DEVELOPMENT",
+  },
+  {
+    title: "AUTOMATE EVERYTHING",
+    year: "2026",
+    type: "AI & AUTOMATION",
+  },
+  {
+    title: "MAKE IT MEMORABLE",
+    year: "2026",
+    type: "BRANDING",
+  },
+];
 
 const Hero = () => {
   useHeroAnimation();
 
   return (
     <>
-      <section className="hero-section relative h-[350vh] bg-[#ffcc00]">
-        <div className="hero-stage sticky top-0 h-screen overflow-hidden">
+      <section className="hero-section relative h-[400vh] bg-[#ffcc00]">
+        <div className="hero-stage sticky top-0 min-h-screen overflow-hidden">
           <Navbar />
-
+          <HoneycombMaze />
           <HeroVisual />
           <HeroText />
 
@@ -21,20 +52,46 @@ const Hero = () => {
         </div>
       </section>
 
-      <section className="min-h-screen bg-black px-6 py-20 text-white md:px-10">
-        <p className="mb-8 text-xs uppercase tracking-[0.25em] text-white/40">
-          Newbie Launch
-        </p>
+     <section
+  id="work"
+  className="work-section relative min-h-screen overflow-hidden bg-black py-24 text-white"
+>
+  <div className="work-topline px-6 md:px-10">
+    <p>Newbie Launch</p>
+    <p>02 — Selected Work</p>
+  </div>
 
-        <h2 className="max-w-6xl text-[11vw] text-amber-500 font-black uppercase leading-[0.82] tracking-[-0.07em]">
-          Ideas into
-          <br />
-          experiences.
-        </h2>
-      </section>
+  <div className="work-intro px-6 md:px-10">
+    <h2>
+      Ideas into
+      <br />
+      <span>experiences.</span>
+    </h2>
+  </div>
+
+  <div className="projects-marquee">
+    <div className="projects-track">
+      {[...projects, ...projects].map((project, index) => (
+        <article className="project-marquee-card" key={`${project.title}-${index}`}>
+          <div className="project-placeholder">
+            <span>PROJECT</span>
+          </div>
+
+          <div className="project-info">
+            <h3>{project.title}</h3>
+
+            <div>
+              <span>{project.year}</span>
+              <span>{project.type}</span>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
     </>
   );
 };
 
 export default Hero;
-

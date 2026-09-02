@@ -1,3 +1,5 @@
+// hero.animation.js
+
 import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -16,11 +18,7 @@ export const useHeroAnimation = () => {
         },
       });
 
-      /*
-       * Phase 1
-       * Keep the title centered.
-       */
-
+      // Enter the title
       timeline.to(
         ".hero-title-wrap",
         {
@@ -29,11 +27,6 @@ export const useHeroAnimation = () => {
         },
         0.18
       );
-
-      /*
-       * Phase 2
-       * Enter the title.
-       */
 
       timeline.to(
         ".hero-title-wrap",
@@ -44,11 +37,7 @@ export const useHeroAnimation = () => {
         0.42
       );
 
-      /*
-       * Phase 3
-       * Title disappears as we pass through it.
-       */
-
+      // Pass through the title
       timeline.to(
         ".hero-title-wrap",
         {
@@ -59,11 +48,7 @@ export const useHeroAnimation = () => {
         0.60
       );
 
-      /*
-       * Phase 4
-       * Services appear AFTER entering the title.
-       */
-
+      // Reveal services
       timeline.to(
         ".services-scene",
         {
@@ -85,10 +70,7 @@ export const useHeroAnimation = () => {
         0.62
       );
 
-      /*
-       * Give each service its own movement.
-       */
-
+      // Service movement
       timeline.to(
         ".service-card-1",
         {
@@ -144,13 +126,25 @@ export const useHeroAnimation = () => {
         0.65
       );
 
+      // Keep the services scene on screen for a long hold.
+      timeline.to(
+        ".services-scene",
+        {
+          opacity: 1,
+          duration: 3,
+          ease: "none",
+        },
+        1.15
+      );
+
+      // Navbar changes after the title is gone.
       timeline.to(
         ".navbar-item",
         {
-          color: "#ffffff",
+          color: "#fff",
           ease: "none",
         },
-        0.63
+        0.62
       );
     });
 

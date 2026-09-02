@@ -1,0 +1,204 @@
+.honeycomb-maze {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* =========================================
+   HONEYCOMB SVG
+========================================= */
+
+.honeycomb-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* =========================================
+   MOVING BEES
+   Same positions/animations as old index.html
+========================================= */
+
+.honeycomb-maze .bee {
+  position: absolute;
+  font-size: 1.7rem;
+  pointer-events: none;
+  z-index: 3;
+
+  filter: drop-shadow(
+    0 2px 6px rgba(0, 0, 0, 0.2)
+  );
+}
+
+/* Bee 1 */
+
+.honeycomb-maze .bee-1 {
+  top: 12%;
+  left: 6%;
+  animation: fly1 9s ease-in-out infinite;
+}
+
+/* Bee 2 */
+
+.honeycomb-maze .bee-2 {
+  top: 58%;
+  right: 8%;
+  animation: fly2 11s ease-in-out infinite 1.5s;
+}
+
+/* Bee 3 */
+
+.honeycomb-maze .bee-3 {
+  top: 28%;
+  right: 20%;
+
+  font-size: 1.1rem;
+
+  animation: fly3 8s ease-in-out infinite 3s;
+}
+
+/* Bee 4 */
+
+.honeycomb-maze .bee-4 {
+  bottom: 16%;
+  left: 20%;
+
+  font-size: 1.2rem;
+
+  animation: fly4 13s ease-in-out infinite 0.8s;
+}
+
+/* Bee 5 */
+
+.honeycomb-maze .bee-5 {
+  top: 8%;
+  right: 6%;
+
+  font-size: 1rem;
+
+  animation: fly5 10s ease-in-out infinite 2s;
+}
+
+
+/* =========================================
+   BEE ANIMATIONS
+   Copied from original implementation
+========================================= */
+
+@keyframes fly1 {
+  0% {
+    transform: translate(0, 0) rotate(-10deg);
+  }
+
+  20% {
+    transform: translate(40px, -30px) rotate(8deg);
+  }
+
+  45% {
+    transform: translate(80px, 15px) rotate(-5deg);
+  }
+
+  70% {
+    transform: translate(30px, 50px) rotate(12deg);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(-10deg);
+  }
+}
+
+@keyframes fly2 {
+  0% {
+    transform: translate(0, 0) rotate(5deg);
+  }
+
+  25% {
+    transform: translate(-50px, -40px) rotate(-8deg);
+  }
+
+  55% {
+    transform: translate(-20px, 30px) rotate(10deg);
+  }
+
+  80% {
+    transform: translate(-60px, 10px) rotate(-4deg);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(5deg);
+  }
+}
+
+@keyframes fly3 {
+  0% {
+    transform: translate(0, 0) rotate(-6deg);
+  }
+
+  30% {
+    transform: translate(-35px, 25px) rotate(9deg);
+  }
+
+  60% {
+    transform: translate(20px, 45px) rotate(-3deg);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(-6deg);
+  }
+}
+
+@keyframes fly4 {
+  0% {
+    transform: translate(0, 0) rotate(8deg);
+  }
+
+  35% {
+    transform: translate(60px, -45px) rotate(-7deg);
+  }
+
+  65% {
+    transform: translate(25px, -20px) rotate(5deg);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(8deg);
+  }
+}
+
+@keyframes fly5 {
+  0% {
+    transform: translate(0, 0) rotate(-4deg);
+  }
+
+  40% {
+    transform: translate(-30px, 35px) rotate(7deg);
+  }
+
+  70% {
+    transform: translate(-55px, 15px) rotate(-9deg);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(-4deg);
+  }
+}
+
+
+/* =========================================
+   MOBILE
+   Same behaviour as original
+========================================= */
+
+@media (max-width: 720px) {
+  .honeycomb-maze .bee-3,
+  .honeycomb-maze .bee-4,
+  .honeycomb-maze .bee-5 {
+    display: none;
+  }
+}
