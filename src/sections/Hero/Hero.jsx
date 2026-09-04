@@ -1,5 +1,5 @@
 import Navbar from "../../components/layout/Navbar";
-import HoneycombMaze from "../../components/common/HoneycombMaze";
+// import HoneycombMaze from "../../components/common/HoneycombMaze";
 import Footer from "../../components/layout/Footer";
 
 import HeroText from "./HeroText";
@@ -71,7 +71,7 @@ const Hero = () => {
       >
         <div className="mb-24 flex items-center justify-between px-5 text-[9px] font-semibold uppercase tracking-[0.25em] text-white/40 md:mb-10 md:px-10">
           <span>Newbie Launch</span>
-          <span>02 — Selected Work</span>
+          <span>02 - Selected Work</span>
         </div>
 
         {/* WORK INTRO */}
@@ -134,7 +134,7 @@ const Hero = () => {
             </span>
 
             <span className="text-[9px] uppercase tracking-[0.15em] text-black/40">
-              03 — Process
+              03 - Process
             </span>
           </div>
 
@@ -244,7 +244,7 @@ const Hero = () => {
         className="bg-[#ffcc00] px-5 py-24 text-black md:px-10 md:py-32"
       >
         <div className="mb-24 flex items-center justify-between text-[9px] font-semibold uppercase tracking-[0.22em] text-black/50 md:mb-36">
-          <span>04 — About</span>
+          <span>04 - About</span>
           <span>Newbie Launch</span>
         </div>
 
@@ -313,7 +313,7 @@ const Hero = () => {
         className="flex min-h-screen flex-col justify-between bg-black px-5 py-8 text-white md:px-10 md:py-10"
       >
         <div className="flex justify-between text-[8px] font-semibold uppercase tracking-[0.22em] text-white/40 md:text-[10px]">
-          <span>05 — Contact</span>
+          <span>05 - Contact</span>
           <span>Let's build something</span>
         </div>
 
