@@ -1,3 +1,8 @@
+// hero.animation.js
+// X = EXACT CENTER
+// Y = SAME ENTRY HEIGHT
+// 🔥 47.5% HATA DIYA — 50% CENTER HAI
+
 import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -11,6 +16,7 @@ export const useHeroAnimation = () => {
 
       /* =====================================================
          DESKTOP
+         EXACT CENTER ENTRY
       ===================================================== */
 
       mm.add("(min-width: 769px)", () => {
@@ -18,13 +24,12 @@ export const useHeroAnimation = () => {
           scale: 1,
           opacity: 1,
           visibility: "visible",
-          transformOrigin: "50% 50%",
+
+          // X = 50% EXACT CENTER
+          // Y = marked entry height
+          transformOrigin: "50% 36.5%",
         });
 
-        /*
-         * Services are ALWAYS present behind the
-         * transparent NEWBIE LAUNCH cutout.
-         */
         gsap.set(".services-scene", {
           opacity: 1,
           visibility: "visible",
@@ -35,23 +40,19 @@ export const useHeroAnimation = () => {
           transformOrigin: "50% 50%",
         });
 
-        /*
-         * Yellow knockout layer.
-         */
         gsap.set(".hero-yellow-cover", {
           opacity: 1,
           scale: 1,
           visibility: "visible",
-          transformOrigin: "50% 50%",
+
+          // SAME EXACT POINT
+          transformOrigin: "48.65% 37%",
         });
 
         gsap.set(".navbar-item", {
           color: "#000",
         });
 
-        /*
-         * Reset cards.
-         */
         gsap.set(
           [
             ".service-card-1",
@@ -76,86 +77,85 @@ export const useHeroAnimation = () => {
         });
 
         /* =====================================================
-           HERO ZOOM — PHASE 1
+           ZOOM
         ===================================================== */
 
         timeline.to(
           [".hero-title-wrap", ".hero-yellow-cover"],
           {
             scale: 2,
-            duration: 0.22,
+            duration: 0.20,
             ease: "power1.inOut",
           }
         );
-
-        /* =====================================================
-           HERO ZOOM — PHASE 2
-        ===================================================== */
 
         timeline.to(
           [".hero-title-wrap", ".hero-yellow-cover"],
           {
             scale: 4,
-            duration: 0.28,
+            duration: 0.25,
             ease: "power1.inOut",
           }
         );
 
         /* =====================================================
-           SERVICES START MOVING
+           SERVICES MOVE
         ===================================================== */
 
         timeline.to(".services-canvas", {
           scale: 1.08,
-          duration: 0.16,
+          duration: 0.12,
           ease: "power1.inOut",
         });
 
         /* =====================================================
-           KNOCKOUT ZOOM
-
-           Services remain visible through NEWBIE LAUNCH.
+           ENTER THROUGH CENTER OF W
         ===================================================== */
 
         timeline.to(
           [".hero-title-wrap", ".hero-yellow-cover"],
           {
-            scale: 5.5,
-            duration: 0.24,
-            ease: "power1.inOut",
+            scale: 7,
+            opacity: 1,
+            duration: 0.25,
+            ease: "power2.in",
           },
           "<"
         );
 
         /* =====================================================
-           YELLOW COVER EXITS
+           FULL ENTRY
         ===================================================== */
 
-        timeline.to(".hero-yellow-cover", {
-          opacity: 0,
-          scale: 7,
-          duration: 0.24,
-          ease: "power2.inOut",
-        });
-
         timeline.to(
-          ".hero-title-wrap",
+          [".hero-title-wrap", ".hero-yellow-cover"],
           {
-            opacity: 0,
-            scale: 7,
-            duration: 0.24,
-            ease: "power2.inOut",
-          },
-          "<"
+            scale: 13,
+            opacity: 1,
+            duration: 0.35,
+            ease: "power2.in",
+          }
         );
 
         /* =====================================================
-           SERVICES SETTLE
+           NO FADE — JUST REMOVE AFTER ENTERING
+        ===================================================== */
+
+        timeline.set(".hero-yellow-cover", {
+          visibility: "hidden",
+        });
+
+        timeline.set(".hero-title-wrap", {
+          visibility: "hidden",
+        });
+
+        /* =====================================================
+           SERVICES
         ===================================================== */
 
         timeline.to(".services-canvas", {
           scale: 1,
-          duration: 0.20,
+          duration: 0.22,
           ease: "power1.inOut",
         });
 
@@ -174,7 +174,7 @@ export const useHeroAnimation = () => {
         );
 
         /* =====================================================
-           CARD 01
+           CARDS
         ===================================================== */
 
         timeline.to(
@@ -189,10 +189,6 @@ export const useHeroAnimation = () => {
           "<"
         );
 
-        /* =====================================================
-           CARD 02
-        ===================================================== */
-
         timeline.to(
           ".service-card-2",
           {
@@ -204,10 +200,6 @@ export const useHeroAnimation = () => {
           },
           "<"
         );
-
-        /* =====================================================
-           CARD 03
-        ===================================================== */
 
         timeline.to(
           ".service-card-3",
@@ -221,10 +213,6 @@ export const useHeroAnimation = () => {
           "<"
         );
 
-        /* =====================================================
-           CARD 04
-        ===================================================== */
-
         timeline.to(
           ".service-card-4",
           {
@@ -237,10 +225,6 @@ export const useHeroAnimation = () => {
           "<"
         );
 
-        /* =====================================================
-           CARD 05
-        ===================================================== */
-
         timeline.to(
           ".service-card-5",
           {
@@ -252,10 +236,6 @@ export const useHeroAnimation = () => {
           },
           "<"
         );
-
-        /* =====================================================
-           HOLD
-        ===================================================== */
 
         timeline.to(
           {},
@@ -278,12 +258,9 @@ export const useHeroAnimation = () => {
           scale: 1,
           opacity: 1,
           visibility: "visible",
-          transformOrigin: "50% 50%",
+          transformOrigin: "50% 36.5%",
         });
 
-        /*
-         * Services remain behind the knockout.
-         */
         gsap.set(".services-scene", {
           opacity: 1,
           visibility: "visible",
@@ -299,7 +276,7 @@ export const useHeroAnimation = () => {
           opacity: 1,
           scale: 1,
           visibility: "visible",
-          transformOrigin: "50% 50%",
+          transformOrigin: "50% 36.5%",
         });
 
         gsap.set(".navbar-item", {
@@ -316,10 +293,6 @@ export const useHeroAnimation = () => {
           },
         });
 
-        /* =====================================================
-           HERO ZOOM — PHASE 1
-        ===================================================== */
-
         timeline.to(
           [".hero-title-wrap", ".hero-yellow-cover"],
           {
@@ -329,22 +302,14 @@ export const useHeroAnimation = () => {
           }
         );
 
-        /* =====================================================
-           HERO ZOOM — PHASE 2
-        ===================================================== */
-
         timeline.to(
           [".hero-title-wrap", ".hero-yellow-cover"],
           {
             scale: 4,
-            duration: 0.24,
+            duration: 0.22,
             ease: "power1.inOut",
           }
         );
-
-        /* =====================================================
-           SERVICES START MOVING
-        ===================================================== */
 
         timeline.to(".services-canvas", {
           scale: 1.05,
@@ -352,45 +317,36 @@ export const useHeroAnimation = () => {
           ease: "power1.inOut",
         });
 
-        /* =====================================================
-           KNOCKOUT ZOOM
-        ===================================================== */
+        timeline.to(
+          [".hero-title-wrap", ".hero-yellow-cover"],
+          {
+            scale: 7,
+            opacity: 1,
+            duration: 0.22,
+            ease: "power2.in",
+          },
+          "<"
+        );
 
         timeline.to(
           [".hero-title-wrap", ".hero-yellow-cover"],
           {
-            scale: 5.5,
-            duration: 0.22,
-            ease: "power1.inOut",
-          },
-          "<"
+            scale: 13,
+            opacity: 1,
+            duration: 0.32,
+            ease: "power2.in",
+          }
         );
 
-        /* =====================================================
-           YELLOW COVER EXITS
-        ===================================================== */
+        /* NO FADE */
 
-        timeline.to(".hero-yellow-cover", {
-          opacity: 0,
-          scale: 8,
-          duration: 0.22,
-          ease: "power2.inOut",
+        timeline.set(".hero-yellow-cover", {
+          visibility: "hidden",
         });
 
-        timeline.to(
-          ".hero-title-wrap",
-          {
-            opacity: 0,
-            scale: 8,
-            duration: 0.22,
-            ease: "power2.inOut",
-          },
-          "<"
-        );
-
-        /* =====================================================
-           NAVBAR
-        ===================================================== */
+        timeline.set(".hero-title-wrap", {
+          visibility: "hidden",
+        });
 
         timeline.to(
           ".navbar-item",
@@ -402,19 +358,11 @@ export const useHeroAnimation = () => {
           "<"
         );
 
-        /* =====================================================
-           MOBILE SERVICES
-        ===================================================== */
-
         timeline.to(".services-canvas", {
           y: "-68vh",
           duration: 0.5,
           ease: "power1.inOut",
         });
-
-        /* =====================================================
-           HOLD
-        ===================================================== */
 
         timeline.to(
           {},
