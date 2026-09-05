@@ -1,4 +1,12 @@
 const Footer = () => {
+  const backToTop = (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <footer className="grid min-h-[340px] grid-cols-1 items-end gap-12 bg-[#ffcc00] px-5 py-8 text-black md:min-h-[300px] md:grid-cols-3 md:px-10">
       <div className="text-[20vw] font-black uppercase leading-[0.75] tracking-[-0.09em] md:text-[7vw]">
@@ -13,7 +21,8 @@ const Footer = () => {
       </div>
 
       <a
-        href="#"
+        href="#top"
+        onClick={backToTop}
         className="text-[8px] font-bold uppercase tracking-[0.15em] transition-opacity hover:opacity-50 md:justify-self-end"
       >
         Back to top ↑

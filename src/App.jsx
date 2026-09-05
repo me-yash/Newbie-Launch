@@ -1,20 +1,21 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
 
-const SimplePage = ({ title }) => (
-  <main className="simple-page">
-    <h1>{title}</h1>
-  </main>
-);
+import Home from "./pages/Home";
+import Work from "./pages/Work";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Navbar from "./components/layout/Navbar";
 
 function App() {
   return (
     <BrowserRouter>
+      <Navbar />
+
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/work" element={<SimplePage title="Work" />} />
-        <Route path="/about" element={<SimplePage title="About" />} />
-        <Route path="/contact" element={<SimplePage title="Contact" />} />
+        <Route path="/work" element={<Work />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </BrowserRouter>
   );
