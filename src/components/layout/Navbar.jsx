@@ -80,9 +80,9 @@ const Navbar = () => {
         {/* LOGO */}
         <Link
           to="/"
-          className="absolute left-1/2 -translate-x-1/2 whitespace-nowrap text-[12px] font-black uppercase tracking-tight md:text-[14px]"
+          className="absolute left-1/2 -translate-x-1/2 whitespace-nowrap font-bold md:text-[14px]"
         >
-          NEWBIE LAUNCH
+         Home
         </Link>
 
         {/* DESKTOP LINKS */}

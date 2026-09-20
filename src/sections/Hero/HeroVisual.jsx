@@ -141,7 +141,7 @@ const HeroVisual = () => {
                 fontWeight="900"
                 letterSpacing="-12"
               >
-                NEWBIE
+                HELLO
               </text>
 
               <text
@@ -154,7 +154,7 @@ const HeroVisual = () => {
                 fontWeight="900"
                 letterSpacing="-12"
               >
-                LAUNCH
+                THERE
               </text>
             </mask>
           </defs>
@@ -179,11 +179,11 @@ const HeroVisual = () => {
         <div className="flex flex-col items-center justify-center">
 
           <span className="hero-title-line block text-[17.5vw] font-black uppercase leading-[0.77] tracking-[-0.095em] text-transparent md:text-[13vw]">
-            NEWBIE
+            HELLO
           </span>
 
           <span className="hero-title-line block text-[17.5vw] font-black uppercase leading-[0.77] tracking-[-0.095em] text-transparent md:text-[13vw]">
-            LAUNCH
+            THERE
           </span>
 
         </div>
