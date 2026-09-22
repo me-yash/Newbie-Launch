@@ -164,7 +164,7 @@ const HeroVisual = () => {
             y="0"
             width="1000"
             height="600"
-            fill="#ffcc00"
+            fill="#ff00bf"
             mask="url(#newbie-launch-cutout)"
           />
         </svg>
