@@ -1,9 +1,9 @@
 import React from "react";
 
 const values = [
-  ["01", "Think Different", "We don't follow templates. We build ideas around the brand."],
-  ["02", "Keep It Sharp", "Simple doesn't mean boring. Every detail has a reason."],
-  ["03", "Make It Move", "Static brands are forgotten. We create experiences people remember."],
+  ["01", "Build Things", "I enjoy turning ideas into real projects, from simple interfaces to complete web experiences."],
+  ["02", "Keep It Clean", "I believe good design should feel simple, intuitive and purposeful without unnecessary complexity."],
+  ["03", "Keep Learning", "Technology keeps evolving, and so do I. I’m always exploring, experimenting and learning something new."],
 ];
 
 export default function About() {
@@ -12,35 +12,37 @@ export default function About() {
       <section className="px-6 md:px-12 lg:px-20 pt-32 pb-28">
         <div className="max-w-7xl mx-auto">
           <p className="text-[#f5d90a] uppercase tracking-[0.3em] text-sm mb-6">
-            Who We Are
+            Who I Am
           </p>
 
           <h1 className="text-6xl md:text-8xl lg:text-[9rem] font-black uppercase leading-[0.8] tracking-[-0.07em]">
             About
             <br />
-            <span className="text-[#f5d90a]">Us.</span>
+            <span className="text-[#f5d90a]">Me.</span>
           </h1>
 
           <div className="mt-24 grid lg:grid-cols-2 gap-12 lg:gap-24">
             <h2 className="text-3xl md:text-5xl font-bold uppercase leading-tight">
-              New ideas deserve
-              <span className="text-[#f5d90a]"> better launches.</span>
+              Ideas deserve
+              <span className="text-[#f5d90a]"> to be built.</span>
             </h2>
 
             <div className="space-y-6 text-lg md:text-xl text-white/55 leading-relaxed">
               <p>
-                Newbie Launch is a creative studio for ambitious new brands,
-                founders and ideas.
+                I'm Yash, a developer who enjoys building things for the web
+                and turning ideas into interactive digital experiences.
               </p>
 
               <p>
-                We combine strategy, design and technology to turn early-stage
-                ideas into brands people actually want to interact with.
+                I work with technologies like React, JavaScript and Tailwind
+                CSS, while continuously exploring backend and full-stack
+                development.
               </p>
 
               <p>
-                No unnecessary noise. No boring templates. Just sharp ideas,
-                strong design and digital experiences built to launch.
+                Beyond writing code, I enjoy experimenting with ideas,
+                working on real-world projects and finding better ways to
+                combine technology with good design.
               </p>
             </div>
           </div>
@@ -50,7 +52,7 @@ export default function About() {
       <section className="px-6 md:px-12 lg:px-20 py-24 border-y border-white/10">
         <div className="max-w-7xl mx-auto">
           <p className="text-white/40 uppercase tracking-[0.3em] text-xs mb-14">
-            Our Approach
+            My Approach
           </p>
 
           <div>
