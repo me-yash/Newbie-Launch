@@ -50,7 +50,7 @@ const Hero = () => {
     <>
       {/* ================= HERO ================= */}
 
-      <section className="hero-section relative h-[300vh] bg-[#ff00b3]">
+      <section className="hero-section relative h-[300vh] bg-[#f5d90a]">
         <div className="hero-stage sticky top-0 min-h-screen overflow-hidden">
           <Navbar />
           {/* <HoneycombMaze /> */}

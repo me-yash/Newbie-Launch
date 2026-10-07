@@ -141,7 +141,7 @@ const HeroVisual = () => {
                 fontWeight="900"
                 letterSpacing="-12"
               >
-                HELLO
+                NEWBIE
               </text>
 
               <text
@@ -154,7 +154,7 @@ const HeroVisual = () => {
                 fontWeight="900"
                 letterSpacing="-12"
               >
-                THERE
+                LAUNCH
               </text>
             </mask>
           </defs>
@@ -164,7 +164,7 @@ const HeroVisual = () => {
             y="0"
             width="1000"
             height="600"
-            fill="#ff00bf"
+            fill="#ffcc00"
             mask="url(#newbie-launch-cutout)"
           />
         </svg>
@@ -179,11 +179,11 @@ const HeroVisual = () => {
         <div className="flex flex-col items-center justify-center">
 
           <span className="hero-title-line block text-[17.5vw] font-black uppercase leading-[0.77] tracking-[-0.095em] text-transparent md:text-[13vw]">
-            HELLO
+            NEWBIE
           </span>
 
           <span className="hero-title-line block text-[17.5vw] font-black uppercase leading-[0.77] tracking-[-0.095em] text-transparent md:text-[13vw]">
-            THERE
+            LAUNCH
           </span>
 
         </div>
